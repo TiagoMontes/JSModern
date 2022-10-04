@@ -124,3 +124,19 @@
     })
 
     console.log(availableUsers);
+
+// 4 - Map
+    const products = [
+        {name: "Mouse", price: 30, category: "Eletronicos"},
+        {name: "Teclado", price: 50.50, category: "Eletronicos"},
+        {name: "Camisa", price: 10.99, category: "Roupas"},
+        {name: "Sapato", price: 5.80, category: "Calçados"}
+    ]
+
+    products.map((product) => {
+        if(product.category === "Eletronicos"){
+            product.onSale = true;
+        }
+    })
+
+    console.log(products);
