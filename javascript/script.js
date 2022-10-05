@@ -140,3 +140,66 @@
     })
 
     console.log(products);
+
+// 5 - Template Literals
+    const userName = "Tiago";
+    const userAge = 23;
+
+    console.log(`Meu nome é ${userName} e tenho ${userAge} anos.`);
+
+// 6 - Destructuring
+    const fruits = ["Maçã", "Laranja", "Mamão"];
+
+    const [fruit1, fruit2, fruit3] = fruits;
+
+    console.log(fruit1);
+    console.log(fruit2);
+    console.log(fruit3);
+
+
+    const productDetails = {
+        name: "Mouse",
+        price: 30,
+        category: "Eletronicos",
+        color: "Preto"
+    }
+
+    const {name: productName, price, category: productCategory, color} = productDetails;
+
+    console.log(`O nome do produto é ${productName}, custa R$${price}, pertence a categoria ${productCategory} e é da cor ${color}.`);
+
+//7 - Spread Operator
+    const a1 = [1, 2, 3];
+    const a2 = [4, 5, 6];
+
+    const a3 = [...a1, ...a2];
+    console.log(a3);
+
+    const a4 = [0, ...a1, 4]
+    console.log(a4)
+
+    //Com objetos
+    const carName = {name: "Gol"};
+    const carBrand = {brand: "Volkswagen"};
+    const otherInfos = {km: 100000, price: 49000};
+
+    const car = {...carName, ...carBrand, ...otherInfos, Wheels: 4};
+
+    console.table(car);
+
+// 8 - Classes
+    class Product{
+        constructor(name, price) {
+            this.name = name;
+            this.price = price;
+        }
+
+        productWithDiscount(discount) {
+            return this.price * ((100 - discount) / 100)
+        }
+    }
+
+    const shirt = new Product("Cachecol hiper mega luxuoso", 10);
+    console.log(shirt);
+    console.log(shirt.productWithDiscount(10));
+    console.log(shirt.productWithDiscount(50));
